@@ -32,31 +32,72 @@ public class TADVetor implements ITADVetor{
         //insere um novo elemento 'o' na colocação 'r' (index)
         // r = index
         // o = elemento
-        if (arrayVetor[r] != null) {
-            // -2 ou então vai lançar a exceção de array cheio, duplicar array antes disso
-            for (int i = r + 1; i >= r; i--) {
-                arrayVetor[i+1] = arrayVetor[i];
+        boolean duplica = true;
+        //checando se precisa duplicar o array
+        for(int i = 0; i< arrayVetor.length;i++){
+            if(arrayVetor[i] == null){
+            //se encontrar algum nulo no array significa que ele não está cheio
+                duplica = false;
+                break;
             }
+        }
+        if(duplica){
+          //duplica = true
+            duplicaArray();
+        }
+        int temp = r + 1;
+        //checar se existe algum nulo depois do index para não "pular" os nulos
+        //para a direita com os outros elementos
+        if (arrayVetor[r] != null) {
+            while(arrayVetor[temp]!=null){
+                temp++;
+            }
+            System.arraycopy(this.arrayVetor, r, arrayVetor, r + 1, temp - r );
         }
         this.arrayVetor[r] = o;
     }
 
     @Override
-    public Object removeAtRank(int r) {
-        // remove e retorno o elemento na colocação 'r'(index)
+    public void removeAtRank(int r) {
+        // remove e retorna o elemento na colocação 'r'(index)
         Object temp = this.arrayVetor[r];
-//      this.arrayVetor[r] =q
-        return temp;
+        System.arraycopy(this.arrayVetor, r+1, arrayVetor, r, arrayVetor.length - r -1);
+        //adicionar null no final
+        System.out.println("Elemento removido: '"+temp+"'");
+    }
+
+    private void duplicaArray() {
+        int novoSize = this.arrayVetor.length * 2;
+        Object novoArray[] = new Object[novoSize];
+        // copiar elementos para o novo array
+        System.arraycopy(this.arrayVetor, 0, novoArray, 0, arrayVetor.length );
+        this.arrayVetor = novoArray;
     }
 
     @Override
-    public int size() {
-        return size;
+    public void size() {
+        int count = 0;
+        for (int i=0; i<=arrayVetor.length-1; i++) {
+            if(arrayVetor[i] != null) {
+               count++;
+            }
+        }
+        System.out.println("Tamanho do array = "+size+"\n"+"Número de elementos no array: "+count);
+
     }
 
     @Override
     public boolean isEmpty() {
-        return this.arrayVetor == null;
+        boolean checagem = true;
+        //checa se existe elementos no array
+        //se existir ele retorna false
+        //se só existir nulos ele retorna true
+        for (int i=0; i<=arrayVetor.length-1; i++) {
+            if (arrayVetor[i] != null) {
+                checagem = false;
+            }
+        }
+        return checagem;
     }
     @Override
     public String toString() {

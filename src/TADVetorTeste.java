@@ -1,34 +1,36 @@
 public class TADVetorTeste {
     public static void main(String[] args) {
         TADVetor arrayVetor = new TADVetor(10);
-//        arrayVetor.insertAtRank(0, "salame");
-        arrayVetor.insertAtRank(9, "gatinhos");
-//        arrayVetor.insertAtRank(1, "subs");
-        arrayVetor.insertAtRank(7, "aranha-lobo");
+
+        //inserir elementos
+        arrayVetor.insertAtRank(0, "salame");
+        arrayVetor.insertAtRank(1, "aranha-lobo");
+        arrayVetor.insertAtRank(2, "subs");
+        arrayVetor.insertAtRank(3, "peixe-palhaço");
+        arrayVetor.insertAtRank(4, "gatinhos");
+        arrayVetor.insertAtRank(5, "roupa-de-cama");
+        arrayVetor.insertAtRank(6, "chuva");
+        arrayVetor.insertAtRank(7, "hera");
+        arrayVetor.insertAtRank(8, "round");
+        arrayVetor.insertAtRank(9, "glorb");
+        System.out.println(arrayVetor);
+
+
+        //substituir elementos
+//        arrayVetor.replaceAtRank(3,"alvejante");
+        arrayVetor.size();
+
+        //remover elementos
+//        arrayVetor.removeAtRank(1);
 //        System.out.println(arrayVetor);
-//
+//        arrayVetor.removeAtRank(2);
 //        System.out.println(arrayVetor);
 
-//        System.out.println(arrayVetor);
 
-//        arrayVetor.insertAtRank(3, "simba");
-//        arrayVetor.insertAtRank(8, "gelo");
-//        arrayVetor.insertAtRank(2, "rosa");
-        System.out.println(arrayVetor);
-//        arrayVetor.insertAtRank(2, "certo");
-//        arrayVetor.insertAtRank(3, "void");
-//        arrayVetor.replaceAtRank(4, "gamer");
-//        arrayVetor.insertAtRank(2,"andy");
-//        arrayVetor.insertAtRank(3, "bacon");
-//        arrayVetor.insertAtRank(7, "praia");
-//        arrayVetor.insertAtRank(5, "gamer");
-//        arrayVetor.insertAtRank(6, "dead end");
+        //checar se array está vazio
+//        System.out.println("Empty = "+arrayVetor.isEmpty());
+
+        //mostrar array final
 //        System.out.println(arrayVetor);
-        arrayVetor.insertAtRank(7, "slit");
-//        arrayVetor.replaceAtRank(1, "cocada");
-        System.out.println(arrayVetor.elemAtRank(9));
-        System.out.println(arrayVetor.size());
-        System.out.println(arrayVetor.isEmpty());
-        System.out.println(arrayVetor);
     }
 }

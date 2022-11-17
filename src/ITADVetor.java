@@ -8,10 +8,10 @@ public interface ITADVetor {
     void insertAtRank(int r, Object o);
     //insere um novo elemento 'o'(elemento) na colocação 'r' (index)
 
-    Object removeAtRank(int r);
+    void removeAtRank(int r);
     // remove e retorno o elemento na colocação 'r'(index)
 
-    public int size();
+    public void size();
 
     public boolean isEmpty();
 }
