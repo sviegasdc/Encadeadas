@@ -53,6 +53,7 @@ public class TADVetor implements ITADVetor{
                 temp++;
             }
             System.arraycopy(this.arrayVetor, r, arrayVetor, r + 1, temp - r );
+
         }
         this.arrayVetor[r] = o;
     }
